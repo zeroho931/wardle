@@ -1,0 +1,60 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 0 10px 0;
+}
+.flame2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.flame3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keyboard {
+  color: white;
+  display: inline-block;
+  background-color: gray;
+  width: 40px;
+  height: 50px;
+  border-radius: 10px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+.keyboard2 {
+  color: white;
+  display: inline-block;
+  background-color: gray;
+  width: 60px;
+  height: 50px;
+  border-radius: 10px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+.key {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backkey {
+  padding: 7px 0 0 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+}
