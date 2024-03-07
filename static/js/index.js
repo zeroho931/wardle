@@ -90,6 +90,30 @@ function appStart() {
   };
 
   window.addEventListener("keydown", handlekeydown);
+
+  const clickevent = (event) => {
+    const thisBlock_click = document.querySelector(
+      `.board-block[data-index='${attempts}${index}']`
+    );
+    const clickBlock = document.querySelector(
+      `.key[data-index='${event.target.innerText}']`
+    );
+
+    console.log(clickBlock, event.target.innerText);
+
+    if (event.target.alt === "백") handleBackspace();
+    else if (event.target.innerText == "ENTER") {
+      console.log("dddd");
+      if (index === 5) handleEnterkey();
+      else return;
+    } else {
+      console.log("sss");
+      thisBlock_click.innerText = event.target.innerText;
+      index += 1;
+    }
+  };
+
+  window.addEventListener("click", clickevent);
 }
 
 appStart();
