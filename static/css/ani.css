@@ -1,0 +1,8 @@
+@keyframes gameover {
+  from {
+    transform: scale(0.2);
+  }
+  to {
+    transform: scale(2) rotateX(360deg);
+  }
+}
