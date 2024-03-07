@@ -1,11 +1,10 @@
-from typing import Union
-
 from fastapi import FastAPI
 
 from fastapi.staticfiles import StaticFiles
 app = FastAPI()
 
 answer = 'TRAIN'
+
 
 @app.get('/answer')
 def get_answer():

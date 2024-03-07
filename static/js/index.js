@@ -26,17 +26,37 @@ function appStart() {
     const 정답_객체 = await 응답.json();
     const 정답 = 정답_객체.answer;
 
+    let 키보드_로컬 = 0;
+
     for (let i = 0; i < 5; i++) {
       const block = document.querySelector(
         `.board-block[data-index='${attempts}${i}']`
       );
       const 입력한_글자 = block.innerText;
       const 정답_글자 = 정답[i];
+
+      const 키보드_입력 = document.querySelector(
+        `.keyboard[data-index='${입력한_글자}']`
+      );
+      const 키보드_정답 = document.querySelector(
+        `.keyboard[data-index='${정답_글자}']`
+      );
+
       if (입력한_글자 === 정답_글자) {
         맞은_갯수 += 1;
         block.style.background = "#6AAA64";
-      } else if (정답.includes(입력한_글자)) block.style.background = "#C9B458";
-      else block.style.background = "#787C7E";
+        if (키보드_입력 == 키보드_정답) {
+          키보드_입력.style.background = "#6AAA64";
+          키보드_로컬 += 1;
+        }
+      } else if (정답.includes(입력한_글자)) {
+        block.style.background = "#C9B458";
+        if (!키보드_로컬 == 1) {
+          키보드_입력.style.background = "#C9B458";
+        }
+      } else {
+        block.style.background = "#787C7E";
+      }
       block.style.color = "white";
     }
     if (맞은_갯수 === 5) GameEnd();
